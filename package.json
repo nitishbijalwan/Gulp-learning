@@ -1,15 +1,15 @@
 {
-  "name": "Pluralsight-Gulp",
+  "name": "Gulp-Learning",
   "version": "0.1.0",
-  "description": "Starter Code for Pluralsight Course JavaScript Build Automation with Gulp.js",
+  "description": "Learning automation using Gulp.js",
   "authors": [
     "John Papa"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/johnpapa/pluralsight-gulp",
+  "homepage": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/johnpapa/pluralsight-gulp.git"
+    "url": "https://github.com/nitishbijalwan/Gulp-learning"
   },
   "scripts": {
     "init": "npm install",
@@ -25,6 +25,15 @@
     "serve-favicon": "^2.0.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.2",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-print": "^2.0.1",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "yargs": "^6.4.0"
   }
 }
