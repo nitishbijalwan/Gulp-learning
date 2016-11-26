@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var args=require('yargs').argv;
 var $=require('gulp-load-plugins')({lazy:true});
-var config=require('./gulp.config');
+var config=require('./gulp.config')();
 
 // var jshint = require('gulp-jshint');
 // var jscs = require('gulp-jscs');
@@ -21,6 +21,25 @@ gulp.task('vet', function () {
         .pipe($.jshint.reporter('fail'));
 
 });
+
+gulp.task('styles',function () {
+    log('compiling less-->css');
+    return gulp
+        .src(config.less)
+        .pipe($.plumber())
+        .pipe($.less())
+         .pipe($.autoprefixer({browsers:['last 2 version','> 5%']}))
+         .pipe(gulp.dest('www/'));
+       
+});
+
+gulp.task('less-watcher',function () {
+    gulp.watch([config.less],['styles']);
+});
+
+function errorLogger(error) {
+    log(error);
+}
 
 function log(msg) {
     if (typeof(msg)==='object') {
